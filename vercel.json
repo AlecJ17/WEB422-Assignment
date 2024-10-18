@@ -3,14 +3,11 @@
   "builds": [
     {
       "src": "Assignment-1/moviesAPI/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "Assignment-1/moviesAPI/build"
-      }
+      "use": "@vercel/node"
     },
     {
       "src": "Assignment-2/package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build" ]
     }
   ],
   "routes": [
