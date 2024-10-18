@@ -1,0 +1,87 @@
+/* General body and table styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table header styling */
+th {
+    background-color: #007bff;
+    color: #151313 !important;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+/* Table body rows hover effect */
+#moviesTable tr:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Navbar customization */
+.navbar {
+    background-color: #e3f2fd;
+    border-bottom: 2px solid #007bff;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+/* Search form and buttons styling */
+#searchForm input[type="search"] {
+    width: 250px;
+}
+
+#searchForm button {
+    margin-left: 5px;
+}
+
+/* Modal styling for movie details */
+.modal-content {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #f8f9fa;
+}
+
+.modal-title {
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Close button customization within modal */
+.close {
+    color: #aaaaaa;
+    font-size: 24px;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
