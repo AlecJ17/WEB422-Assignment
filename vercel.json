@@ -7,7 +7,7 @@
     },
     {
       "src": "Assignment-2/package.json",
-      "use": "@vercel/static-build" ]
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [

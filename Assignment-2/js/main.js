@@ -11,6 +11,21 @@
  ********************************************************************************/
 document.addEventListener('DOMContentLoaded', function() {
     const baseUrl = `${window.location.origin}/api/movies`;
+
+    fetch(baseUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data); // Handle your data here
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+
     let currentPage = 1;
     const perPage = 10;
 
