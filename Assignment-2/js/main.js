@@ -10,7 +10,7 @@
  *
  ********************************************************************************/
 document.addEventListener('DOMContentLoaded', function() {
-    const baseUrl = 'http://localhost:3000/api/movies';
+    const baseUrl = `${window.location.origin}/api/movies`;
     let currentPage = 1;
     const perPage = 10;
 
