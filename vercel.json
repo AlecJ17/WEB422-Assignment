@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Assignment-1/moviesAPI/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "Assignment-1/moviesAPI/build"
+      }
+    },
+    {
+      "src": "Assignment-2/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "Assignment-1/moviesAPI/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Assignment-2/index.html"
+    }
+  ]
+}
