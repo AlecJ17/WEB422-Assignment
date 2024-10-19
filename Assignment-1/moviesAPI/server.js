@@ -1,6 +1,6 @@
 /*********************************************************************************
  *  WEB422 – Assignment 1
- *  I declare that this assignment is my own work in accordance with Seneca Academic Policy.
+ *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.
  *  No part of this assignment has been copied manually or electronically from any other source
  *  (including web sites) or distributed to other students.
  *
@@ -8,6 +8,7 @@
  *  Cyclic Link: _______________________________________________________________
  *
  ********************************************************************************/
+
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -15,6 +16,8 @@ const MoviesDB = require('./modules/moviesDB');
 const db = new MoviesDB();
 
 const app = express();
+const HTTP_PORT = process.env.PORT || 3000;
+
 app.use(cors());
 app.use(express.json());
 
@@ -24,11 +27,15 @@ app.get('/', (req, res) => {
 
 db.initialize(process.env.MONGODB_CONN_STRING)
     .then(() => {
-        console.log('Connected to MongoDB');
+        app.listen(HTTP_PORT, () => {
+            console.log(`Server listening on: ${HTTP_PORT}`);
+            console.log(`Connected to MongoDB`);
+        });
     })
     .catch(err => {
         console.error('Database initialization failed', err);
     });
+
 
 app.post('/api/movies', (req, res) => {
     db.addNewMovie(req.body)
@@ -69,6 +76,3 @@ app.delete('/api/movies/:id', (req, res) => {
         })
         .catch(err => res.status(500).json({ error: err.message }));
 });
-
-// Export the app for Vercel to use
-module.exports = app;

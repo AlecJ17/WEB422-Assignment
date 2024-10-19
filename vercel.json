@@ -2,12 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "Assignment-1/moviesAPI/package.json",
+      "src": "Assignment-1/moviesAPI/server.js",
       "use": "@vercel/node"
     },
     {
-      "src": "Assignment-2/package.json",
-      "use": "@vercel/static-build"
+      "src": "Assignment-2/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -17,7 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "Assignment-2/index.html"
+      "dest": "Assignment-2/$1"
     }
   ]
 }
