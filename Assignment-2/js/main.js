@@ -7,7 +7,7 @@
  *	Name: Alec Josef Serrano
  *	Student ID: 133592238
  *	Date: October 14, 2024
- *
+ *  Vercel Deployment URL: https://web-422-assignment-2-seven.vercel.app/
  ********************************************************************************/
 document.addEventListener('DOMContentLoaded', function() {
     const baseUrl = `${window.location.origin}/api/movies`;
